@@ -42,7 +42,6 @@ function Header({location, isSearchEnabled = true}) {
             <NpmLogo size="32" style={logoStyle} />
             {siteMetadata.title}
           </Link>
-
           {isSearchEnabled ? (
             <Box display={['none', null, null, 'block']} ml={4}>
               <Search />
@@ -88,7 +87,6 @@ function HeaderNavItems({items}) {
             </Box>
           )
         }
-
         return (
           <Link key={index} href={item.url} display="block" color="inherit" ml={4}>
             {item.title}
