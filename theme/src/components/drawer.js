@@ -7,10 +7,11 @@ function Drawer({isOpen, onDismiss, children}) {
   return (
     <AnimatePresence>
       {isOpen ? (
-        <button
-          // These event handlers fix a bug that caused links below the fold
-          // to be unclickable in macOS Safari.
-          // Reference: https://github.com/theKashey/react-focus-lock/issues/79
+        // These event handlers fix a bug that caused links below the fold
+        // to be unclickable in macOS Safari.
+        // Reference: https://github.com/theKashey/react-focus-lock/issues/79
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+        <div
           style={{textAlign: 'start', fontSize: '1rem', lineHeight: '1.5rem'}}
           onMouseDown={event => event.preventDefault()}
           onClick={event => event.target.focus()}
@@ -47,7 +48,7 @@ function Drawer({isOpen, onDismiss, children}) {
               {children}
             </Fixed>
           </FocusOn>
-        </button>
+        </div>
       ) : null}
     </AnimatePresence>
   )
